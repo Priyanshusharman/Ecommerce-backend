@@ -19,8 +19,7 @@ exports.getAllProducts = catchAsyncErrors(async (req, res, next) => {
 
   const apiFeature = new ApiFeatures(Product.find(), req.query)
     .search()
-    .filter()
-    .pagination(resultPerPage);
+    .filter();
 
   
   let products = await apiFeature.query;
